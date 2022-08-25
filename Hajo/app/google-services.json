@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "305281391229",
+    "project_id": "hajo-82aa3",
+    "storage_bucket": "hajo-82aa3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:305281391229:android:f9c37576ab662333b06f14",
+        "android_client_info": {
+          "package_name": "com.ssafy.hajo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "305281391229-dj31r2sbeb1hcboj46bgbteogs4o6fa9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ssafy.hajo",
+            "certificate_hash": "358aa394b788b37121eb39955d0951aa45780b57"
+          }
+        },
+        {
+          "client_id": "305281391229-v3pk1ibluht8jn5muuvk78k8ko34d9pi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAaTaR0zEz2yssVo08lMHoOz8Fyw6gRjNg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "305281391229-v3pk1ibluht8jn5muuvk78k8ko34d9pi.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

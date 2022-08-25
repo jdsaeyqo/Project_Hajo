@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Spinner
+        android:id="@+id/spinner_plan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_current_plan"
+        android:layout_width="wrap_content"
+        android:layout_height="27dp"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/nexon_lv2_gothic_bold"
+        android:text="현재 진행 중인 플랜"
+        android:textSize="22dp"
+        app:layout_constraintStart_toStartOf="@id/spinner_plan"
+        app:layout_constraintTop_toBottomOf="@id/spinner_plan" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        tools:listitem="@layout/recycler_plan_home"
+        tools:visibility="visible"
+        android:visibility="gone"
+        android:id="@+id/rv_current_plan"
+        android:layout_width="0dp"
+        android:layout_height="200dp"
+        android:layout_margin="10dp"
+        android:background="@drawable/bg_recycler"
+        android:elevation="10dp"
+        android:padding="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_current_plan" />
+
+    <TextView
+        android:visibility="gone"
+        android:id="@+id/tv_nothing_doing"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="현재 진행중인 플랜이 없습니다"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="@id/tv_current_plan"
+        app:layout_constraintTop_toTopOf="@id/rv_current_plan" />
+
+    <TextView
+        app:layout_constraintVertical_bias="0.45"
+        android:id="@+id/tv_done_plan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/nexon_lv2_gothic_bold"
+        android:text="완료 된 플랜"
+
+        android:textSize="22dp"
+        app:layout_constraintStart_toStartOf="@id/tv_current_plan"
+        app:layout_constraintTop_toBottomOf="@id/rv_current_plan"
+        />
+
+    <androidx.recyclerview.widget.RecyclerView
+        tools:visibility="visible"
+        android:id="@+id/rv_done_plan"
+        android:layout_width="0dp"
+        android:layout_height="200dp"
+        android:layout_margin="10dp"
+        android:background="@drawable/bg_done_plan"
+        android:elevation="10dp"
+        android:padding="5dp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_done_plan" />
+
+    <TextView
+        android:visibility="gone"
+        android:id="@+id/tv_nothing_done"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="완료 된 플랜이 없습니다"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="@id/tv_done_plan"
+        app:layout_constraintTop_toTopOf="@id/rv_done_plan" />
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/btn_go_share_plan"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="20dp"
+        android:background="@drawable/btn_circle_share"
+        android:elevation="10dp"
+        android:src="@drawable/next"
+        app:layout_constraintBottom_toBottomOf="@id/btn_go_bookmark"
+        app:layout_constraintEnd_toStartOf="@id/btn_go_bookmark"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/btn_go_bookmark" />
+
+    <TextView
+
+        android:id="@+id/tv_go_share_plan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:fontFamily="@font/nexon_lv2_gothic_bold"
+        android:text="공유플랜"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@id/btn_go_share_plan"
+        app:layout_constraintStart_toStartOf="@id/btn_go_share_plan"
+        app:layout_constraintTop_toBottomOf="@id/btn_go_share_plan" />
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/btn_go_bookmark"
+
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="40dp"
+        android:background="@drawable/btn_circle_bookmark"
+        android:elevation="10dp"
+        android:src="@drawable/bookmark"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/btn_go_share_plan" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:fontFamily="@font/nexon_lv2_gothic_bold"
+        android:text="북마크"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@id/btn_go_bookmark"
+        app:layout_constraintStart_toStartOf="@id/btn_go_bookmark"
+        app:layout_constraintTop_toBottomOf="@id/btn_go_bookmark" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

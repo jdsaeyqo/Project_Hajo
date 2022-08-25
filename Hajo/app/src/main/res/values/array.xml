@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="detailSpinnerList">
+        <item>대플랜 1</item>
+        <item>대플랜 2</item>
+        <item>대플랜 3</item>
+    </string-array>
+
+</resources>

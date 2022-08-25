@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    android:orientation="horizontal"
+    android:padding="5dp">
+
+    <CheckBox
+        android:id="@+id/checkbox"
+        android:layout_width="44dp"
+        android:layout_height="44dp"/>
+
+    <TextView
+        android:id="@+id/tv_task_content"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:text="태스크 내용"
+        android:textColor="#2B2B2B"
+        android:textSize="18sp"
+        android:gravity="center"/>
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"/>
+
+    <ImageView
+        android:id="@+id/img_memo"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:src="@drawable/memo_icon"
+        android:padding="8dp"
+        android:layout_gravity="center"/>
+
+    <ImageView
+        android:id="@+id/img_alram"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:visibility="gone"
+        android:src="@drawable/plus_plan"
+        android:padding="15dp"
+        android:layout_gravity="center"/>
+
+    <ImageView
+        android:id="@+id/img_picture"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:src="@drawable/picture_icon"
+        android:padding="8dp"
+        android:layout_gravity="center"/>
+
+    <TextView
+        android:id="@+id/tv_task_edit"
+        android:layout_width="44dp"
+        android:layout_height="match_parent"
+        android:text="편집"
+        android:visibility="gone"
+        android:textSize="16sp"
+        android:gravity="center"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"/>
+
+</LinearLayout>

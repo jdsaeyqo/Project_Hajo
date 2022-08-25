@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/boardFragment"
+        android:name="com.ssafy.hajo.board.boast.BoardFragment"
+        android:label="fragment_board"
+        tools:layout="@layout/fragment_board" />
+    <fragment
+        android:id="@+id/competitionFragment"
+        android:name="com.ssafy.hajo.competition.CompetitionFragment"
+        android:label="fragment_competition"
+        tools:layout="@layout/fragment_competition" />
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.ssafy.hajo.home.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/myPageFragment"
+        android:name="com.ssafy.hajo.mypage.MyPageFragment"
+        android:label="fragment_my_page"
+        tools:layout="@layout/fragment_my_page" />
+    <fragment
+        android:id="@+id/planFragment"
+        android:name="com.ssafy.hajo.plan.PlanFragment"
+        android:label="fragment_plan"
+        tools:layout="@layout/fragment_plan" />
+</navigation>

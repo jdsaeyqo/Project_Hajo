@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/board_report"
+        android:title="게시글 신고" />
+
+    <item
+        android:id="@+id/board_block"
+        android:title="게시글 차단"/>
+
+    <item
+        android:id="@+id/user_block"
+        android:title="유저 차단"/>
+
+    <item
+        android:id="@+id/user_report"
+        android:title="유저 신고"/>
+
+</menu>

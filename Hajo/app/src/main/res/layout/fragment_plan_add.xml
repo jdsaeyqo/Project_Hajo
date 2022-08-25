@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:padding="4dp"
+        android:background="#FFFFFF">
+
+        <TextView
+            android:fontFamily="@font/nexon_lv2_gothic_bold"
+            android:id="@+id/tv_add_bplan_title"
+            android:layout_width="320dp"
+            android:layout_height="wrap_content"
+            android:text="중플랜 생성"
+            android:textSize="28dp"
+            android:textColor="#403F3F"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"/>
+
+        <LinearLayout
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/tv_add_plan_name"
+                android:text="중플랜 이름"
+                android:textSize="24sp"
+                android:textColor="#403F3F"
+                android:layout_width="0dp"
+                android:layout_weight="9"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/et_plan_add_title"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:hint="중플랜 이름을 입력하세요."
+            android:textColor="@color/black"
+            android:textSize="20sp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <Button
+                android:id="@+id/tv_start_day"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16dp"
+                android:backgroundTint="@color/white"
+                android:textColor="@color/grey_80"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="10dp"
+                android:text="시작 날짜"/>
+
+            <Button
+                android:id="@+id/tv_end_day"
+                android:textSize="16dp"
+                android:backgroundTint="@color/white"
+                android:textColor="@color/grey_80"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:text="종료 날짜"/>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"/>
+
+
+            <ImageView
+                android:id="@+id/img_add_color"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginRight="15dp"
+                android:layout_weight="0"
+                android:background="@color/primary" />
+
+            </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_add_plan_description"
+            android:text="중플랜 설명"
+            android:textSize="24sp"
+            android:textColor="#403F3F"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <EditText
+            android:id="@+id/et_plan_add_detail"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:hint="중플랜 설명을 입력하세요."
+            android:textColor="@color/black"
+            android:textSize="20sp"/>
+
+        <Button
+            android:id="@+id/btn_add_plan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="확인"
+            android:textSize="20sp"
+            android:fontFamily="@font/nanum_square_round_b"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:backgroundTint="@color/primary"/>
+
+
+        </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

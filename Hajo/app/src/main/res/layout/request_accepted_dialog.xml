@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/request_form_inner_background"
+    android:layout_gravity="center"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="대플랜 선택"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="16dp"/>
+
+        <Spinner
+            android:id="@+id/plan_spinner"
+            android:layout_width="250dp"
+            android:layout_height="40dp"
+            android:background="@drawable/spinner_background"
+            android:popupBackground="@drawable/decline"
+            android:spinnerMode="dropdown"
+            app:layout_constraintTop_toBottomOf="@id/tv_title"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginTop="16dp"/>
+
+        <Button
+            android:id="@+id/tv_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="닫기"
+            android:textSize="16dp"
+            android:textColor="@color/white"
+            android:fontFamily="@font/nanum_square_round_b"
+            android:backgroundTint="@color/grey_80"
+            app:layout_constraintTop_toBottomOf="@id/plan_spinner"
+            app:layout_constraintEnd_toStartOf="@id/tv_ok"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:padding="8dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="16dp"
+            android:layout_marginEnd="16dp"/>
+
+        <Button
+            android:id="@+id/tv_ok"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="적용"
+            android:textSize="16dp"
+            android:fontFamily="@font/nanum_square_round_b"
+            android:textColor="@color/black"
+            android:backgroundTint="@color/primary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:padding="8dp"
+            android:layout_marginBottom="16dp"
+            android:layout_marginEnd="16dp"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>

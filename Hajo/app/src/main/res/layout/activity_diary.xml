@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/c_background"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".diary.DiaryActivity">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/c_diary"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0">
+
+                <!--            <ImageView-->
+                <!--                android:id="@+id/img_diary"-->
+                <!--                android:layout_width="match_parent"-->
+                <!--                android:layout_height="match_parent"-->
+                <!--                android:src="@drawable/old_page"-->
+                <!--                android:scaleType="centerCrop"-->
+                <!--                android:padding="8dp"-->
+                <!--                android:textStyle="bold"-->
+                <!--                app:layout_constraintTop_toTopOf="@id/c_diary"-->
+                <!--                app:layout_constraintBottom_toBottomOf="@id/c_diary"-->
+                <!--                app:layout_constraintStart_toStartOf="@id/c_diary"-->
+                <!--                app:layout_constraintEnd_toEndOf="@id/c_diary" />-->
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/btn_page_pre"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:text="Pre"
+
+            android:textColor="#3E1E01"
+            android:textStyle="bold"
+            android:visibility="visible"
+            android:textSize="20dp"
+            android:backgroundTint="#005E4027"
+            app:layout_constraintBottom_toBottomOf="@id/c_diary"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/btn_component_add"
+            android:layout_marginBottom="20dp"/>
+
+        <TextView
+            android:id="@+id/btn_component_add"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:text="Add"
+            android:textColor="#3E1E01"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:backgroundTint="#005E4027"
+            app:layout_constraintStart_toEndOf="@id/btn_page_pre"
+            app:layout_constraintBottom_toBottomOf="@id/c_diary"
+            app:layout_constraintEnd_toStartOf="@id/btn_component_Edit"
+            android:layout_marginBottom="20dp"/>
+
+
+
+        <TextView
+            android:id="@+id/btn_component_Edit"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:text="Locate"
+            android:textColor="#3E1E01"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:backgroundTint="#005E4027"
+            app:layout_constraintBottom_toBottomOf="@id/c_diary"
+            app:layout_constraintStart_toEndOf ="@id/btn_component_add"
+            app:layout_constraintEnd_toStartOf="@id/btn_page_next"
+            android:layout_marginBottom="20dp"/>
+
+        <TextView
+            android:id="@+id/btn_save"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:text="Save"
+            android:textColor="#3E1E01"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:visibility="gone"
+            android:backgroundTint="#575E4027"
+            app:layout_constraintBottom_toBottomOf="@id/c_diary"
+            app:layout_constraintStart_toStartOf ="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginBottom="20dp"/>
+
+        <TextView
+            android:id="@+id/btn_page_next"
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:text="Next"
+            android:textColor="#3E1E01"
+            android:textStyle="bold"
+            android:textSize="20dp"
+            android:backgroundTint="#005E4027"
+            app:layout_constraintBottom_toBottomOf="@id/c_diary"
+            app:layout_constraintStart_toEndOf="@id/btn_component_Edit"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginBottom="20dp"/>
+
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

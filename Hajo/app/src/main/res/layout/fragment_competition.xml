@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="competitionViewModel"
+            type="com.ssafy.hajo.competition.CompetitionViewModel" />
+
+        <variable
+            name="userViewModel"
+            type="com.ssafy.hajo.registration.UserViewModel" />
+    </data>
+
+    <com.sothree.slidinguppanel.SlidingUpPanelLayout
+        android:id="@+id/main_frame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#EFEFEF"
+        android:gravity="bottom"
+        app:umanoDragView="@id/cv_slide_layout"
+        app:umanoOverlay="true"
+        app:umanoPanelHeight="100dp"
+        app:umanoShadowHeight="0dp"
+        tools:context=".competition.CompetitionFragment">
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/cl_back_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv_info"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="15dp"
+                    app:cardElevation="8dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/cl_info"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="16dp">
+
+                        <TextView
+                            android:id="@+id/tv_info"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:fontFamily="@font/nexon_lv2_gothic_bold"
+                            android:text="내 경쟁 정보"
+                            android:textColor="@color/black"
+                            android:textSize="26dp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/tv_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:fontFamily="@font/nanum_square_round_eb"
+                            android:text="@{userViewModel.user.userNickname}"
+                            android:textColor="@color/black"
+                            android:textSize="22dp"
+                            app:layout_constraintStart_toStartOf="@id/tv_info"
+                            app:layout_constraintTop_toBottomOf="@id/tv_level"
+                            tools:text="유저닉네임" />
+
+                        <TextView
+                            android:id="@+id/tv_rate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:fontFamily="@font/nanum_square_round_b"
+                            android:textColor="@color/black"
+                            android:textSize="22dp"
+                            app:layout_constraintBottom_toBottomOf="@id/tv_name"
+                            app:layout_constraintStart_toEndOf="@id/tv_name"
+                            app:layout_constraintTop_toTopOf="@id/tv_name"
+                            app:winRate="@{userViewModel.winRate}"
+                            tools:text="승률 51%" />
+
+                        <TextView
+                            android:id="@+id/tv_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:fontFamily="@font/nanum_square_round_r"
+                            android:textColor="@color/black"
+                            android:textSize="18dp"
+                            app:layout_constraintBottom_toBottomOf="@id/tv_level"
+                            app:layout_constraintStart_toEndOf="@id/tv_level"
+                            app:layout_constraintTop_toTopOf="@id/tv_level"
+                            app:title="@{userViewModel.user.titleName}"
+                            tools:text="&lt;성실한&gt;" />
+
+                        <TextView
+                            android:id="@+id/tv_level"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:fontFamily="@font/nanum_square_round_r"
+                            android:textColor="@color/black"
+                            android:textSize="18dp"
+                            app:layout_constraintStart_toStartOf="@id/tv_name"
+                            app:layout_constraintTop_toBottomOf="@id/tv_info"
+                            app:level="@{userViewModel.user.userExp}"
+                            tools:text="Lv.339" />
+
+                        <TextView
+                            android:id="@+id/tv_compete_setting"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="8dp"
+                            android:fontFamily="@font/nanum_square_round_r"
+                            android:text="경쟁 참여"
+                            android:textColor="@color/black"
+                            android:textSize="17dp"
+                            app:layout_constraintBottom_toBottomOf="@id/tv_title"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@id/tv_title" />
+
+
+                        <androidx.appcompat.widget.SwitchCompat
+
+                            android:id="@+id/sw_register"
+                            android:layout_width="wrap_content"
+                            android:layout_height="24dp"
+                            android:layout_marginStart="4dp"
+                            android:layout_marginEnd="8dp"
+                            android:checked="@{userViewModel.user.userOnmatch}"
+                            android:thumb="@drawable/competition_thumb"
+                            app:layout_constraintBottom_toBottomOf="@id/tv_info"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:track="@drawable/competition_track" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv_buttons"
+                    android:layout_width="0dp"
+                    android:layout_height="150dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="4dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/cv_info">
+
+                    <LinearLayout
+                        android:id="@+id/test"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/tv_register"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:textSize="18dp"
+                                android:text="제안서 등록"
+                                android:textColor="@color/black" />
+
+                            <View
+                                android:layout_width="1dp"
+                                android:layout_height="match_parent"
+                                android:background="#f4f4f4" />
+
+                            <TextView
+                                android:id="@+id/tv_history"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="전적 보기"
+                                android:textSize="18dp"
+                                android:textColor="@color/black" />
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="#f4f4f4" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/tv_sent"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="신청한 경쟁전"
+                                android:textSize="18dp"
+                                android:textColor="@color/black" />
+
+                            <View
+                                android:layout_width="1dp"
+                                android:layout_height="match_parent"
+                                android:background="#f4f4f4" />
+
+                            <TextView
+                                android:id="@+id/tv_match"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="매칭하기"
+                                android:textSize="18dp"
+                                android:textColor="@color/black" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv_onProgress"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="15dp"
+                    app:cardElevation="8dp"
+                    app:layout_constraintBottom_toTopOf="@id/ll_space"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/cv_buttons">
+
+                    <TextView
+                        android:id="@+id/tv_no_match"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:fontFamily="@font/nanum_square_round_b"
+                        android:gravity="center"
+                        android:text="진행 중인 경쟁전이 없습니다!"
+                        android:textSize="16dp"
+                        android:visibility="gone" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rv_match"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        tools:itemCount="3"
+                        tools:listitem="@layout/list_item_match" />
+                </androidx.cardview.widget.CardView>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:id="@+id/ll_space"
+                    android:layout_width="match_parent"
+                    android:layout_height="110dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+
+
+        <LinearLayout
+            android:id="@+id/cv_slide_layout"
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:orientation="vertical">
+
+            <View
+                android:id="@+id/swipe"
+                android:layout_width="90dp"
+                android:layout_height="5dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/swipe_tip_background" />
+
+            <androidx.core.widget.NestedScrollView
+                android:id="@+id/ns_request"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/slide_layout_background">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="25dp"
+                        android:layout_marginBottom="10dp"
+                        android:text="신청 받은 경쟁전"
+                        android:textColor="@color/black"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_no_request"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="140dp"
+                        android:text="신청 받은 경쟁전이 없습니다!"
+                        android:textColor="@color/black"
+                        android:textSize="18dp" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rv_request_received"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:visibility="gone"
+                        tools:itemCount="3"
+                        tools:listitem="@layout/list_item_request_received" />
+                </LinearLayout>
+            </androidx.core.widget.NestedScrollView>
+
+
+        </LinearLayout>
+
+
+    </com.sothree.slidinguppanel.SlidingUpPanelLayout>
+</layout>
+
+
+

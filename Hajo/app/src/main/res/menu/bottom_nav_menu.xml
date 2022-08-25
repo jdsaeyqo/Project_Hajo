@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/planFragment"
+        android:icon="@drawable/bottom_menu_plan"
+        android:title="플랜" />
+    <item
+        android:id="@+id/boardFragment"
+        android:icon="@drawable/bottom_menu_board"
+        android:title="게시판" />
+    <item
+        android:id="@+id/homeFragment"
+        android:icon="@drawable/bottom_menu_home"
+        android:title="홈" />
+    <item
+        android:id="@+id/competitionFragment"
+        android:icon="@drawable/bottom_menu_competition"
+        android:title="경쟁전" />
+    <item
+        android:id="@+id/myPageFragment"
+        android:icon="@drawable/bottom_menu_mypage"
+        android:title="마이 페이지" />
+
+</menu>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="grandPlan"
+            type="com.ssafy.hajo.repository.dto.response.GrandPlanResponse" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="22dp">
+
+        <TextView
+            android:id="@+id/tv_plan_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="대플랜 이름"
+            android:text="@{grandPlan.planTitle}"
+            android:fontFamily="@font/nanum_square_round_b"
+            android:textSize="20dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <TextView
+            android:id="@+id/tv_M"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="M"
+            android:fontFamily="@font/nanum_square_round_l"
+            android:textSize="12dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/rv_week_plan"
+            android:layout_marginTop="40dp"/>
+
+        <TextView
+            android:id="@+id/tv_W"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="W"
+            android:fontFamily="@font/nanum_square_round_l"
+            android:textSize="12dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tv_M"
+            android:layout_marginTop="40dp"/>
+
+        <TextView
+            android:id="@+id/tv_F"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="F"
+            android:fontFamily="@font/nanum_square_round_l"
+            android:textSize="12dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tv_W"
+            android:layout_marginTop="40dp"/>
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_week_plan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            tools:listitem="@layout/list_item_my_page_small_plan"
+            app:layout_constraintTop_toBottomOf="@id/tv_plan_name"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.motion.widget.MotionLayout
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_gradient"
+    app:layoutDescription="@xml/fragment_home_scene"
+    tools:context=".home.HomeFragment">
+
+    <ImageView
+        android:id="@+id/iv_main_image"
+        android:layout_width="wrap_content"
+        android:layout_height="300dp"
+        android:layout_marginVertical="10dp"
+        android:src="@drawable/hajo_logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cl_main_info"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@drawable/bg_top_radius"
+        android:elevation="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_main_image">
+
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/scrollView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tv_memo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="40dp"
+                    android:text="MEMO"
+                    android:textColor="@color/black"
+                    android:textSize="22dp"
+                    app:layout_constraintStart_toStartOf="@id/rv_memo"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:padding="8dp"
+                    android:id="@+id/rv_memo"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:layout_marginHorizontal="24dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/bg_memo"
+                    app:layout_constraintTop_toBottomOf="@id/tv_memo" />
+
+                <TextView
+                    android:id="@+id/tv_todo"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="40dp"
+                    android:fontFamily="@font/nanum_square_round_eb"
+                    android:text="오늘의 할 일"
+                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                    app:layout_constraintBottom_toTopOf="@id/rv_home_todo"
+                    app:layout_constraintStart_toStartOf="@id/rv_home_todo"
+                    app:layout_constraintTop_toBottomOf="@id/rv_memo" />
+
+                <Spinner
+                    android:gravity="end"
+                    android:id="@+id/home_spinner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    app:layout_constraintBottom_toBottomOf="@id/tv_todo"
+                    app:layout_constraintEnd_toEndOf="@id/rv_home_todo"
+                    app:layout_constraintTop_toTopOf="@id/tv_todo" />
+
+                <TextView
+                    android:id="@+id/tv_nothing_task"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="오늘 해야할 할 일이 없습니다"
+                    android:visibility="gone"
+                    app:layout_constraintStart_toStartOf="@id/rv_home_todo"
+                    app:layout_constraintTop_toTopOf="@id/rv_home_todo" />
+
+                <androidx.recyclerview.widget.RecyclerView
+
+                    android:id="@+id/rv_home_todo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="20dp"
+                    android:layout_marginTop="5dp"
+                    app:layout_constraintTop_toBottomOf="@id/tv_todo" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </androidx.core.widget.NestedScrollView>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fb_add"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_margin="20dp"
+            android:backgroundTint="#F17751"
+            android:src="@drawable/fb_add"
+            app:borderWidth="0dp"
+            app:fabCustomSize="60dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:tint="@color/primary" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fb_memo"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginBottom="10dp"
+            android:backgroundTint="@color/white"
+            android:src="@drawable/fb_post_it"
+            android:visibility="invisible"
+            app:borderWidth="0dp"
+            app:fabCustomSize="48dp"
+            app:layout_constraintBottom_toTopOf="@id/fb_add"
+            app:layout_constraintEnd_toEndOf="@id/fb_add"
+            app:tint="@null"
+            tools:visibility="visible" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fb_plan"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:backgroundTint="@color/white"
+            android:src="@drawable/fb_calendar"
+            android:visibility="invisible"
+            app:borderWidth="0dp"
+            app:fabCustomSize="48dp"
+            app:layout_constraintEnd_toStartOf="@id/fb_memo"
+            app:layout_constraintTop_toTopOf="@id/fb_memo"
+            app:tint="@null"
+            tools:visibility="visible" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fb_diary"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:backgroundTint="@color/white"
+            android:src="@drawable/quest"
+            android:visibility="invisible"
+            app:borderWidth="0dp"
+            app:fabCustomSize="48dp"
+            app:layout_constraintEnd_toStartOf="@id/fb_add"
+            app:layout_constraintTop_toTopOf="@id/fb_add"
+            app:tint="@null"
+            tools:visibility="visible" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.motion.widget.MotionLayout>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/primary_light"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+
+    <LinearLayout
+        android:id="@+id/c_color"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="40dp"
+        android:layout_marginTop="40dp"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/img_red"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@color/p_red"
+            android:layout_margin="5dp"/>
+
+        <ImageView
+            android:id="@+id/img_black"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="#FF5722"
+            android:layout_margin="5dp"/>
+
+        <ImageView
+            android:id="@+id/img_blue"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@color/p_blue"
+            android:layout_margin="5dp"/>
+
+        <ImageView
+            android:id="@+id/img_primary"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@color/primary_dark"
+            android:layout_margin="5dp"/>
+
+        <ImageView
+            android:id="@+id/img_green"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@color/p_green"
+            android:layout_margin="5dp"/>
+
+        <ImageView
+            android:id="@+id/img_light_blue"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="#74C1FD"
+            android:layout_margin="5dp"/>
+
+
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

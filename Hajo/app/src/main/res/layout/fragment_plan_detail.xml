@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <Spinner
+        android:id="@+id/plan_detail_spinner"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_margin="10dp"
+        android:background="#4DF1EFEF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_plan_detail_bigplan_start"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/plan_detail_spinner"
+        app:layout_constraintEnd_toStartOf="@id/tv_plan_detail_bigplan_end"
+        app:layout_constraintBottom_toTopOf="@+id/calander_container"
+        android:text="시작날짜"
+        android:textColor="@color/black"
+        android:layout_margin="5dp"
+        android:gravity="center"/>
+
+    <TextView
+        android:id="@+id/tv_plan_detail_wave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@+id/tv_plan_detail_bigplan_start"
+        app:layout_constraintEnd_toStartOf="@id/tv_plan_detail_bigplan_end"
+        app:layout_constraintTop_toBottomOf="@id/plan_detail_spinner"
+        app:layout_constraintBottom_toTopOf="@+id/calander_container"
+        android:text="~"
+        android:textColor="@color/black"
+        android:layout_margin="5dp"
+        android:gravity="center"/>
+
+    <TextView
+        android:id="@+id/tv_plan_detail_bigplan_end"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:textColor="#E6000000"
+        app:layout_constraintStart_toEndOf="@id/tv_plan_detail_wave"
+        app:layout_constraintTop_toBottomOf="@+id/plan_detail_spinner"
+        app:layout_constraintBottom_toTopOf="@+id/calander_container"
+
+        android:text="종료날짜"
+        android:layout_margin="5dp"
+        android:gravity="center"/>
+
+    <ImageButton
+        android:id="@+id/ibtn_calendar_bigplan_picker"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:backgroundTint="@color/white"
+        android:padding="5dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/calendar_picker"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="7dp"
+        app:layout_constraintBottom_toTopOf="@+id/calander_container"
+        app:layout_constraintStart_toEndOf="@id/tv_plan_detail_bigplan_end"
+        app:layout_constraintTop_toBottomOf="@+id/plan_detail_spinner"></ImageButton>
+
+    <Button
+        android:id="@+id/btn_bigplan_desc"
+        android:layout_width="70dp"
+        android:layout_height="46dp"
+        android:backgroundTint="@color/white"
+        android:text="설명"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toTopOf="@+id/calander_container"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/plan_detail_spinner"
+        android:layout_margin="5dp"/>
+
+    <FrameLayout
+        android:id="@+id/calander_container"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ibtn_calendar_bigplan_picker"
+        app:layout_constraintBottom_toTopOf="@+id/img_add_plan"
+        android:layout_margin="10dp"
+        android:background="#FAFAFA">
+
+    </FrameLayout>
+
+    <ImageButton
+        android:id="@+id/img_add_plan"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/calander_container"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="#EDEDED"
+        android:layout_margin="10dp"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

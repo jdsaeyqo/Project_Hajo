@@ -1,0 +1,415 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="SharePlan"
+            type="com.ssafy.hajo.repository.dto.response.ShareDetailResponse" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/iv_profile_item"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_detail_nickname_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:text="@{SharePlan.wrtNickname}"
+            android:textSize="16dp"
+            app:layout_constraintBottom_toBottomOf="@id/iv_profile_item"
+            app:layout_constraintStart_toEndOf="@id/iv_profile_item"
+            app:layout_constraintTop_toTopOf="@id/iv_profile_item"
+            app:layout_goneMarginStart="5dp"
+            tools:text="닉네임" />
+
+        <ImageButton
+            android:id="@+id/btn_detail_more"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:backgroundTint="@color/white"
+            android:src="@drawable/ic_baseline_more_vert_24"
+            app:layout_constraintBottom_toBottomOf="@id/tv_detail_nickname_item"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tv_detail_nickname_item" />
+
+
+        <TextView
+            android:id="@+id/btn_delete_board"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:gravity="center"
+            android:text="삭제"
+            android:textColor="@color/grey_50"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@id/btn_modify_board"
+            app:layout_constraintEnd_toStartOf="@id/btn_modify_board"
+            app:layout_constraintTop_toTopOf="@id/btn_modify_board"
+            tools:visibility="visible" />
+
+        <TextView
+
+            android:id="@+id/btn_modify_board"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:gravity="center"
+            android:text="수정"
+            android:textColor="@color/primary"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@id/btn_detail_more"
+            app:layout_constraintEnd_toStartOf="@id/btn_detail_more"
+            app:layout_constraintTop_toTopOf="@id/btn_detail_more"
+            tools:visibility="visible" />
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cardview"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="20dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_profile_item">
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_share_detail"
+                app:elevation="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/fixed_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/tv_grand_plan"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="20dp"
+                        android:includeFontPadding="false"
+                        android:text="@{SharePlan.grandplanTitle}"
+                        android:textColor="@color/black"
+                        android:textSize="22dp"
+                        app:layout_constraintBottom_toTopOf="@id/tv_spending_time_head"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.2"
+                        tools:text="대플랜 이름" />
+
+                    <TextView
+                        android:id="@+id/tv_spending_time_head"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="소요 기간(일) : "
+                        android:textColor="@color/grey_70"
+                        app:layout_constraintStart_toStartOf="@id/tv_grand_plan"
+                        app:layout_constraintTop_toBottomOf="@id/tv_grand_plan" />
+
+                    <TextView
+                        android:id="@+id/tv_spending_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{String.valueOf(SharePlan.shrplanPeriod)}"
+                        android:textColor="@color/grey_70"
+                        android:textSize="16dp"
+                        app:layout_constraintBottom_toBottomOf="@id/tv_spending_time_head"
+                        app:layout_constraintStart_toEndOf="@id/tv_spending_time_head"
+                        app:layout_constraintTop_toTopOf="@id/tv_spending_time_head"
+                        tools:text="60" />
+
+                    <ImageView
+                        android:id="@+id/iv_detail_category"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_margin="20dp"
+                        android:src="@drawable/ic_launcher_foreground"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <View
+                        android:id="@+id/dot_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="3dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/bg_dot_view"
+                        app:layout_constraintBottom_toTopOf="@id/btn_drop_down"
+                        app:layout_constraintTop_toBottomOf="@id/iv_detail_category" />
+
+                    <ImageView
+                        android:id="@+id/btn_drop_down"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginBottom="10dp"
+                        android:adjustViewBounds="true"
+                        android:background="@color/white"
+                        android:src="@drawable/ic_arrow_down"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/dot_view" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/hiden_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/fixed_layout"
+                    tools:visibility="visible">
+
+
+                    <TextView
+                        android:id="@+id/category_head"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:text="분류 : "
+                        android:textColor="@color/black"
+                        android:textSize="16dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/category"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{SharePlan.shrplanCategory}"
+                        android:textColor="@color/black"
+                        android:textSize="16dp"
+                        app:layout_constraintBottom_toBottomOf="@id/category_head"
+                        app:layout_constraintStart_toEndOf="@id/category_head"
+                        app:layout_constraintTop_toTopOf="@id/category_head"
+                        tools:text="학습" />
+
+                    <TextView
+                        android:id="@+id/tv_explain"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="20dp"
+                        android:layout_marginBottom="10dp"
+                        android:text="@{SharePlan.shrplanSummary}"
+                        android:textColor="@color/grey_80"
+                        android:textSize="16dp"
+                        app:layout_constraintBottom_toTopOf="@id/btn_up"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="@id/category_head"
+                        app:layout_constraintTop_toBottomOf="@id/category_head"
+                        tools:text="대플랜 설명ddddddddddddddddddddddddddddddddddddd" />
+
+                    <ImageView
+                        android:id="@+id/btn_up"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/ic_arrow_up"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+
+            android:id="@+id/cl_con"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="15dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/cardview"
+            app:layout_constraintStart_toStartOf="@id/cardview"
+            app:layout_constraintTop_toBottomOf="@id/cardview">
+
+            <View
+                android:layout_width="350dp"
+                android:layout_height="1dp"
+                android:background="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <TextView
+                android:layout_marginTop="15dp"
+                android:id="@+id/tv_share_detail_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@{SharePlan.shrplanTitle}"
+                android:textSize="22dp"
+                android:layout_marginStart="20dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="제목제목제목제목" />
+
+            <TextView
+                android:id="@+id/tv_share_detail_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="5dp"
+                android:text="@{String.valueOf(SharePlan.shrplanWrttime)}"
+                android:textColor="@color/grey_70"
+                android:textSize="14dp"
+                app:layout_constraintStart_toStartOf="@id/tv_share_detail_title"
+                app:layout_constraintTop_toBottomOf="@id/tv_share_detail_title"
+                tools:text="2022-08-08" />
+
+            <TextView
+                android:id="@+id/tv_share_detail_user_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="@{SharePlan.wrtTitle}"
+                android:textSize="14dp"
+                app:layout_constraintStart_toStartOf="@id/tv_share_detail_date"
+                app:layout_constraintTop_toBottomOf="@id/tv_share_detail_date"
+                tools:text="성실한" />
+
+            <TextView
+                android:id="@+id/tv_share_detail_level"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:text="Lv."
+                android:textSize="14dp"
+                app:layout_constraintBottom_toBottomOf="@id/tv_share_detail_user_title"
+                app:layout_constraintStart_toEndOf="@id/tv_share_detail_user_title"
+                app:layout_constraintTop_toTopOf="@id/tv_share_detail_user_title" />
+
+
+            <TextView
+                android:id="@+id/tv_share_detail_user_level"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{String.valueOf(SharePlan.wrtLevel)}"
+                android:textSize="14dp"
+                app:layout_constraintBottom_toBottomOf="@id/tv_share_detail_level"
+                app:layout_constraintStart_toEndOf="@id/tv_share_detail_level"
+                app:layout_constraintTop_toTopOf="@id/tv_share_detail_level"
+                tools:text="1" />
+
+            <TextView
+                android:id="@+id/tv_share_detail_nickname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:text="@{SharePlan.wrtNickname}"
+                android:textSize="14dp"
+                app:layout_constraintBottom_toBottomOf="@id/tv_share_detail_user_level"
+                app:layout_constraintStart_toEndOf="@id/tv_share_detail_user_level"
+                app:layout_constraintTop_toTopOf="@id/tv_share_detail_user_level"
+                tools:text="닉네임" />
+
+            <ImageButton
+                android:id="@+id/btn_share_detail_like"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:backgroundTint="@color/white"
+                android:padding="12dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/heart_blank"
+                app:layout_constraintEnd_toStartOf="@id/tv_share_detail_like_cnt"
+                app:layout_constraintTop_toTopOf="@id/tv_share_detail_date" />
+
+            <TextView
+                android:id="@+id/tv_share_detail_like_cnt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{String.valueOf(SharePlan.shrplanLikecount)}"
+                app:layout_constraintBottom_toBottomOf="@id/btn_share_detail_like"
+                app:layout_constraintEnd_toStartOf="@id/btn_share_detail_bookmark"
+                app:layout_constraintTop_toTopOf="@id/btn_share_detail_like"
+                tools:text="20" />
+
+            <ImageButton
+                android:id="@+id/btn_share_detail_bookmark"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:backgroundTint="@color/white"
+                android:padding="12dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ribbon"
+                app:layout_constraintEnd_toStartOf="@id/tv_share_detail_bookmark_cnt"
+                app:layout_constraintTop_toTopOf="@id/btn_share_detail_like" />
+
+            <TextView
+                android:id="@+id/tv_share_detail_bookmark_cnt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="25dp"
+                android:text="@{String.valueOf(SharePlan.shrplanBmkcount)}"
+                app:layout_constraintBottom_toBottomOf="@id/btn_share_detail_bookmark"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/btn_share_detail_bookmark"
+                tools:text="10" />
+
+            <TextView
+                android:id="@+id/tv_share_detail_content"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="80dp"
+                android:background="@color/grey_10"
+                android:padding="8dp"
+                android:text="@{SharePlan.shrplanContent}"
+                android:textColor="@color/grey_50"
+                android:textSize="16dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/tv_share_detail_bookmark_cnt"
+                app:layout_constraintStart_toStartOf="@id/tv_share_detail_title"
+                app:layout_constraintTop_toBottomOf="@id/tv_share_detail_user_title"
+                tools:text="내용내용내용" />
+
+            <View
+                android:id="@+id/view_bottom"
+                android:layout_width="350dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="15dp"
+                android:background="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_share_detail_content" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>

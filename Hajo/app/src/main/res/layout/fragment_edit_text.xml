@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="35dp"
+    android:background="@color/primary_light"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <EditText
+        android:id="@+id/et_editText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:background="#4FFDCC39"
+        android:hint=""
+        android:padding="10dp"
+        android:textColor="#0C0C0C"
+        android:textColorHint="@color/black"
+        android:textSize="20dp"
+        android:maxLength="50"
+        app:layout_constraintTop_toBottomOf="@+id/c_color"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="100dp"/>
+
+    <Button
+        android:id="@+id/btnSave"
+        android:layout_width="80dp"
+        android:layout_height="50dp"
+        android:backgroundTint="@color/primary_dark"
+        android:text="저장"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/btn_cancel"
+        app:layout_constraintTop_toBottomOf="@id/et_editText"/>
+
+    <Button
+        android:id="@+id/btn_cancel"
+        android:layout_width="80dp"
+        android:layout_height="50dp"
+        app:layout_constraintTop_toBottomOf="@id/et_editText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btnSave"
+        android:text="취소"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="40dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:backgroundTint="#E3E3E3"/>
+
+    <LinearLayout
+        android:id="@+id/c_style"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/size_up"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_margin="5dp"
+            android:gravity="center"
+            android:textSize="40dp"
+            android:background="@color/white"
+            android:text="+"/>
+
+        <TextView
+            android:id="@+id/size_down"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_margin="5dp"
+            android:gravity="center"
+            android:background="@color/white"
+            android:textSize="48dp"
+            android:text="-"/>
+
+        <TextView
+            android:id="@+id/bold"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_margin="5dp"
+            android:background="@color/white"
+            android:gravity="center"
+            android:textSize="30dp"
+            android:text="B"/>
+
+        <TextView
+            android:id="@+id/font1"
+            android:fontFamily="@font/kotra_hope"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_margin="5dp"
+            android:background="@color/white"
+            android:gravity="center"
+            android:textSize="20dp"
+            android:text="폰트"/>
+
+        <TextView
+            android:id="@+id/font2"
+            android:fontFamily="@font/cookie_run_regular"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_margin="10dp"
+            android:background="@color/white"
+            android:gravity="center"
+            android:textSize="18dp"
+            android:text="폰트"/>
+
+        <TextView
+            android:id="@+id/font3"
+            android:fontFamily="@font/nexon_lv2_gothic_bold"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_margin="5dp"
+            android:background="@color/white"
+            android:gravity="center"
+            android:textSize="18dp"
+            android:text="폰트"/>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/c_color"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/c_style"
+        android:layout_marginBottom="300dp"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/img_red"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="#F0D64531"
+            android:layout_margin="5dp"/>
+
+        <ImageView
+            android:id="@+id/img_black"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="#DF1717"
+            android:layout_margin="5dp"/>
+
+        <ImageView
+            android:id="@+id/img_blue"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="#FF7783BF"
+            android:layout_margin="5dp"/>
+
+        <ImageView
+            android:id="@+id/img_primary"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@color/primary_dark"
+            android:layout_margin="5dp"/>
+
+        <ImageView
+            android:id="@+id/img_green"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="#28BC45"
+            android:layout_margin="5dp"/>
+
+        <ImageView
+            android:id="@+id/img_white"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@color/white"
+            android:layout_margin="5dp"/>
+
+
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
