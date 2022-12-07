@@ -37,8 +37,8 @@
 - 플랜 생성 버튼을 통해 플랜을 생성할 수 있습니다
 
 <div>
-<img src = "./하조(Hajo) - 플랜 관리 및 공유 서비스 ad50380426ab4e32b85eb287ce6fa065/KakaoTalk_20221121_160417652_04.png" height = "570"/>
-<img src = "./하조(Hajo) - 플랜 관리 및 공유 서비스 ad50380426ab4e32b85eb287ce6fa065/tutorial1.png" height = "570">
+<img src = "./하조(Hajo) - 플랜 관리 및 공유 서비스 ad50380426ab4e32b85eb287ce6fa065/KakaoTalk_20221121_160417652_04.png" height = "480"/>
+<img src = "./하조(Hajo) - 플랜 관리 및 공유 서비스 ad50380426ab4e32b85eb287ce6fa065/tutorial1.png" height = "480">
 </div>
 
 ### 2️⃣ 자랑 / 공유 게시판
