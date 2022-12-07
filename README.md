@@ -1,139 +1,97 @@
-# Hajo
+![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/cd2f601e-ed84-4c52-865e-fdfcaaffa6da/Untitled.png)
 
-![Hajo_Logo](./HAJO-01.png)
+# 📆 하조
 
-# Contributor
+### **나의 가치를 만들어 가는 플래너 앱**
 
-<a href="https://lab.ssafy.com/s07-webmobile4-sub2/S07P12D107/-/project_members">
-    <img src="https://user-images.githubusercontent.com/50603217/185532181-7ebe3d5e-4e0a-4251-80b5-96cae150c748.png">
-</a>
+# 💁‍♂️ 프로젝트 소개
 
-# 서비스 소개
+어떤 일을 하려고 마음 먹었을 때 계획을 어떻게 세워야 할 지, 계획을 세워도 실천하기 어려운 사람들이 많습니다.
 
-## 나의 가치를 만들어 가는 플래너 모바일 어플리케이션 Hajo
+계획을 실천함에 있어 동기부여가 필요하고 플랜을 세세하게 계획할 수 있는 앱이 필요하다고 생각했습니다.
 
-# 주요 기능
+저희는 이러한 문제들을 해결하기 위해 플랜관리, 게시판, 경쟁전 등을 통해 동기부여를 얻고 계획을 실천할 수 있는 서비스를 제공하는 앱을 제작하였습니다
 
-로그인
+# 🤚🏻 Part
 
-```bash
-소셜 로그인을 통해 로그인합니다.
-```
+- 안드로이드 ( 자랑/공유 게시판, 홈 화면 담당 )
 
-홈
+# 🤔 Learned
 
-```bash
-메모와 현재 진행중인 대플랜을 보여줍니다.
-```
+- MVVM 패턴을 사용하였습니다.
+- SharedPreference를 사용해 메모 기능을 구현하였습니다.
+- FloatingActionButton에 애니메이션을 적용하였습니다.
+- 양방향 데이터 바인딩을 사용하여 게시글 등록 기능을 구현하였습니다.
+- MotionLayout 기능으로 홈 화면을 구성하였습니다.
 
-대플랜 추가
+# 🌟 주요 기능
 
-```bash
-대플랜을 추가하고 대플랜 안에 중플랜과 테스크를 달력을 사용해 기간을 설정하여 추가합니다.
-```
+### 1️⃣ 플랜
 
-플랜 공유
+- 홈 화면에서 오늘의 해야 할 플랜들을 확인할 수 있습니다
+- 플랜 생성 버튼을 통해 플랜을 생성할 수 있습니다
 
-```bash
-자신의 플랜을 플랜 공유 게시판에 공유하고 좋아요와 북마크 기능을 사용 가능합니다.
-```
+![KakaoTalk_20221121_160417652_04.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/c09332b9-27a1-4911-a3a9-a31d5fab6e06/KakaoTalk_20221121_160417652_04.png)
 
-자유 게시판
+![tutorial1.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/98993f46-16ee-4f70-bd4f-d11c3bbca144/tutorial1.png)
 
-```bash
-게시글을 작성하고 자신의 글을 수정 및 삭제 기능을 사용 가능합니다.
-```
+### 2️⃣ 자랑 / 공유 게시판
 
-경쟁전 매칭하기
+- 내가 했던 플랜들을 자랑 게시판을 통해 사람들에게 공유하고 인증할 수 있습니다.
+- 공유 게시판을 통해 내가 계획한 플랜들을 공유하거나 다른 사람들의 플랜을 확인하며 참고할 수 있습니다.
 
-```bash
-상대방의 제안서와 프로필을 보여주며, 원하는 상대의 대플랜을 선택하여 경쟁전을 신청합니다.
-```
+![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/982b4489-560c-4e1f-a1c7-106e7d2f09b5/Untitled.png)
 
-현재 진행중인 경쟁전
+![KakaoTalk_20221121_160417652_02.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/250bf045-bcbb-45b4-94e8-b119597e6b86/KakaoTalk_20221121_160417652_02.png)
 
-```bash
-유저가 현재 진행중인 경쟁전 리스트를 보여줍니다.
-```
+### 3️⃣ 경쟁전
 
-신청한 경쟁전
+- 다른 유저들과 경쟁전을 통해 플랜을 달성하며 동기부여를 높일 수 있습니다.
+- 현재 경쟁전 진행상황과 신청현황을 볼 수 있습니다
+- 경쟁전에서 승리 시 룰렛 보상으로 포인트를 얻을 수 있습니다.
+    
+    ![KakaoTalk_20221121_160417652.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/f525a30c-45d1-4372-832a-969fe3243f61/KakaoTalk_20221121_160417652.png)
+    
 
-```bash
-유저가 다른 유저에게 신청한 경쟁전 신청서 리스트를 보여줍니다.
-```
+### 4️⃣ 마이페이지
 
-신청 받은 경쟁전
+- 현재 내 플랜들의 태스크들을 달성하면 별이 채워집니다.
+- 플랜별로 꾸준히 실천했는지 확인할 수 있습니다
+    
+    ![KakaoTalk_20221121_160417652_01.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/20d61b82-c7de-4bcf-933b-36feea71285d/KakaoTalk_20221121_160417652_01.png)
+    
 
-```bash
-다른 유저에게 신청 받은 경쟁전 리스트를 보여주며 수락 및 거절의 기능을 사용합니다.
-```
+### 5️⃣ 보상 시스템
 
-마이페이지
+- 업적을 달성하면 칭호를 얻을 수 있습니다.
+- 얻은 포인트로 다이어리 테마를 구매할 수 있습니다.
+    
+    ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/fb6ab3de-5517-441f-8fd5-ef5cf5dde3f8/Untitled.png)
+    
 
-```bash
-유저의 정보와 테스크 정보, 각 대플랜의 날짜별 테스크 수행 여부를 보여줍니다.
-```
+### 6️⃣ 다이어리
 
-다이어리
+- 다이어리를 통해 자신의 계획 실천내용들을 이미지와 텍스트를 통해 확인할 수 있습니다.
+    
+    ![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/ab1e4cd4-2324-4e21-bdae-13e22aa97727/Untitled.png)
+    
 
-```bash
-사진과 텍스트를 유저가 직접 추가하고 뷰를 수동으로 배치할 수 있습니다.
-```
+# 🛠️ 프로젝트 설계
 
-# Specification
+### ✨ 전체 기술 스택
 
-## Android
+![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/7a100921-327e-4c31-8d68-3e662ba34b94/Untitled.png)
 
-<table class="tg">
-<tbody>
-  <tr>
-    <td><b>Architecture</b></td>
-    <td>MVVM</td>
-  </tr>
-<tr>
-    <td><b>Jetpack Components</b></td>
-<td>DataBinding, LiveData, ViewModel, Lifecycle, viewPager2, Navigation </td>
-</tr>
-<tr>
-    <td><b>Other Library</b></td>
-<td>Glide, SlidingUpPaneLayout </td>
-</tr>
-<tr>
-    <td><b>Network</b></td>
-<td>Retrofit2, coroutine</td>
-</tr>
-<tr>
-    <td><b>Strategy</b></td>
-<td>Git</td>
-</tr>
-<tr>
-    <td><b>Other Tool</b></td>
-<td>MatterMost, Jira</td>
-</tr>
+### 📚 사용한 라이브러리
 
-</tbody>
-</table>
-
-## Backend
-
-<table class="tg">
-<tbody>
-  <tr>
-    <td><b>Architecture</b></td>
-    <td>MVC</td>
-  </tr>
-<tr>
-    <td><b>Library</b></td>
-<td>Hibernate(ORM), Swagger </td>
-</tr>
-<tr>
-    <td><b>Infra</b></td>
-<td>AWS EC2</td>
-</tr>
-<tr>
-    <td><b>CI/CD</b></td>
-<td>Docker, Jenkins</td>
-</tr>
-
-</tbody>
-</table>
+| Name | Description |
+| --- | --- |
+| Coroutine | 안드로이드 비동기 처리 라이브러리 |
+| Retrofit2 | 안드로이드 통신 라이브러리 |
+| Glide | 이미지 처리 라이브러리 |
+| FireBase Auth | 파이어베이스 로그인 라이브러리 |
+| FireBaseFireStore | 파이어베이스 데이터 저장, 읽기 라이브러리 |
+| FireBaseStorage | 파이어베이스 파일 업로드, 다운로드 라이브러리 |
+| Google Auth | 구글 로그인 라이브러리 |
+| KakaoSdk | 카카오 로그인 라이브러리 |
+| NaverSdk | 네이버 로그인 라이브러리 |
